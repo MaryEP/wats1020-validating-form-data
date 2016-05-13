@@ -10,7 +10,6 @@
         <meta name="description" content="An example of inline form validation.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <style>
             body {
@@ -20,7 +19,6 @@
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
-
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
     <body>
@@ -39,27 +37,30 @@
       <p class="lead">Please note: This form is only for validation demonstration purposes. Do not enter real payment information; please use imaginary data.</p>
       <form class="form-horizontal" role="form" action="thank-you.html" method="get" id="order-form">
       <!-- TODO: Add a general validation check so that any field contained in a `div.form-group. required` will be required to have information when the user submits the form. -->
+        
         <fieldset>
-          <legend>Your Information</legend>
+           <legend>Your Information</legend>
           <div class="form-group required">
+            <!--<label for="form-group required" class="error">Please complete the required fields.</label>-->
             <label class="col-sm-3 control-label" for="your-name"><span class="glyphicon glyphicon-question-sign" title="Your first and last name."></span> Your Name</label>
+                                                                  
             <div class="col-sm-9">
-              <input type="text" class="form-control" name="your-name" id="your-name" placeholder="Your Name">
+              <input type="text" class="form-control" name="your-name" id="your-name" placeholder="Your Name" minLength="2" pattern="[A-Za-z ]" required>
             </div>
             <!-- TODO: Make validation for name according to these rules:
                  * Name must be fewer than 128 characters.
-                 * Name may not contain any numbers.
-                 -->
+                 * Name may not contain any numbers.-->      
           </div>
+         
           <div class="form-group required">
             <label class="col-sm-3 control-label" for="your-address">Street Address</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" name="your-address" id="your-address" placeholder="Your Street Address">
+              <input type="text" class="form-control" name="your-address" id="your-address" placeholder="Your Street Address" minLength="3" required>
             </div>
             <!-- TODO: Make validation for street address according to these rules:
-                  * Field must not be blank
-                  -->
+                  * Field must not be blank-->
           </div>
+          
           <div class="form-group">
             <label class="col-sm-3 control-label" for="your-address2">Street Address (additional)</label>
             <div class="col-sm-9">
@@ -69,27 +70,88 @@
           <div class="form-group required">
             <label class="col-sm-3 control-label" for="your-city">City</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" name="your-city" id="your-city" placeholder="Your City">
+              <input type="text" class="form-control" name="your-city" id="your-city" placeholder="Your City" pattern="[A-Za-z ]" required>
             </div>
             <!-- TODO: Make validation for city according to these rules:
-                  * Field must not be blank
-                  -->
+                  * Field must not be blank-->
           </div>
+          
           <div class="form-group required">
-            <label class="col-sm-3 control-label" for="your-state"><span class="glyphicon glyphicon-question-sign" title="Two-letter state abbreviation."></span> State</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control" name="your-state" id="your-state" placeholder="Your State">
+          <label class="col-sm-3 control-label" for="your-state"><span class="glyphicon glyphicon-question-sign" title="Two-letter state abbreviation."></span> State</label>
+           <div class="col-sm-9"> <!--was 4-->
+              <div class="row">
+                <div class="col-xs-3">
+                  
+              <select class="form-control col-sm-5" name="your-state" id="your-state" placeholder="Your State" required>
+                    <option value= "">State</option>
+                    <option value="AL">Alabama (AL)</option>
+                    <option value="AK">Alaska (AK)</option>
+                    <option value="AZ">Arizona (AZ)</option>
+                    <option value="AR">Arkansas (AR)</option>
+                    <option value="CA">California (CA)</option>
+                    <option value="CO">Colorado (CO)</option>
+                    <option value="CT">Connecticut (CT)</option>
+                    <option value="DE">Delaware (DE)</option>
+                    <option value="FL">Florida (FL)</option>
+                    <option value="GA">Georgia (GA)</option>
+                    <option value="HI">Hawaii (HI)</option>
+                    <option value="ID">Idaho (ID)</option>
+                    <option value="IL">Illinois (IL)</option>
+                    <option value="IN">Indiana (IN)</option>
+                    <option value="IA">Iowa (IA)</option>
+                    <option value="KS">Kansas (KS)</option>
+                    <option value="KY">Kentucky (KY)</option>
+                    <option value="LA">Louisiana (LA)</option>
+                    <option value="ME">Maine (ME)</option>
+                    <option value="MD">Maryland (MD)</option>
+                    <option value="MA">Massachusetts (MA)</option>
+                    <option value="MI">Michigan (MI)</option>
+                    <option value="MN">Minnesota (MN)</option>
+                    <option value="MS">Mississippi (MS)</option>
+                    <option value="MO">Missouri (MO)</option>
+                    <option value="MT">Montana (MT)</option>
+                    <option value="NE">Nebraska (NE)</option>
+                    <option value="NV">Nevada (NV)</option>
+                    <option value="NH">New Hampshire (NH)</option>
+                    <option value="IN">Indiana (IN)</option>
+                    <option value="IA">Iowa (IA)</option>
+                    <option value="KS">Kansas (KS)</option>
+                    <option value="NJ">New Jersey (NJ)</option>
+                    <option value="NM">New Mexico (NM)</option>
+                    <option value="NY">New York (NY)</option>
+                    <option value="NC">North Carolina (NC)</option>
+                    <option value="ND">North Dakota (ND)</option>
+                    <option value="OH">Ohio (OH)</option>
+                    <option value="OK">Oklahoma (OK)</option>
+                    <option value="OR">Oregon (OR)</option>
+                    <option value="PA">Pennsylvania (PA)</option>
+                    <option value="RI">Rhode Island (RI)</option>
+                    <option value="SC">South Carolina (SC)</option>
+                    <option value="SD">South Dakota (SD)</option>
+                    <option value="TN">Tennessee (TN)</option>
+                    <option value="TX">Texas (TX)</option>
+                    <option value="UT">Utah (UT)</option>
+                    <option value="VT">Vermont (VT)</option>
+                    <option value="VA">Virginia (VA)</option>
+                    <option value="WA">Washington (WA)</option>
+                    <option value="WV">West Virginia (WV)</option>
+                    <option value="WI">Wisconsin (WI)</option>
+                    <option value="WY">Wyoming (WY)</option>
+              </select>
             </div>
-            <!-- TODO: Make validation for state according to these rules:
-                  * Field must not be blank
-                  * Field must contain exactly two letters
-                  * (Stretch Goal: If possible, verify that the 2-letter combo matches with known state abbreviations.)
-                  -->
-          </div>
+           </div>
+             </div>
+     
+      </div>
+      
+            
+            <!-- TODO: Make validation for state according to these rules:1)Field must not be blank, 2)Field must contain exactly two letters
+            <!-- (Stretch Goal: If possible, verify that the 2-letter combo matches with known state abbreviations.) -->  
+          
           <div class="form-group required">
             <label class="col-sm-3 control-label" for="your-zip"><span class="glyphicon glyphicon-question-sign" title="US ZIP code only."></span> ZIP</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" name="your-zip" id="your-zip" placeholder="Your ZIP Code">
+              <input type="text" class="form-control" name="your-zip" id="your-zip" placeholder="Your ZIP Code" required>
             </div>
             <!-- TODO: Make validation for ZIP according to these rules:
                   * Field must not be blank
@@ -103,17 +165,18 @@
           <div class="form-group required">
             <label class="col-sm-3 control-label" for="card-holder-name"><span class="glyphicon glyphicon-question-sign" title="First and last name shown on card."></span> Name on Card</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" name="card-holder-name" id="card-holder-name" placeholder="Card Holder's Name">
-            </div>
+              <input type="text" class="form-control" name="card-holder-name" id="card-holder-name" placeholder="Card Holder's Name" pattern="[A-Za-z ]" required>
             <!-- TODO: Make validation for name on card according to these rules:
                   * Field must not be blank
                   * Field must conform to same name requirements as above.
                   -->
           </div>
+          </div>
+          
           <div class="form-group required">
             <label class="col-sm-3 control-label" for="card-number"><span class="glyphicon glyphicon-question-sign" title="Test card number: 0000 0000 0000 0000"></span> Card Number</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" name="card-number" id="card-number" placeholder="Debit/Credit Card Number">
+              <input type="text" class="form-control" name="card-number" id="card-number" placeholder="Debit/Credit Card Number" required>
             </div>
             <!-- TODO: Make validation for card number according to these rules:
                   * Field must not be blank
@@ -124,13 +187,15 @@
                   0000 0000 0000 0000
                   -->
           </div>
+            
           <div class="form-group required">
             <label class="col-sm-3 control-label" for="expiry-month">Expiration Date</label>
             <div class="col-sm-9">
               <div class="row">
                 <div class="col-xs-3">
-                  <select class="form-control col-sm-2" name="expiry-month" id="expiry-month">
-                    <option>Month</option>
+                  <select class="form-control col-sm-2" name="expiry-month" id="expiry-month" required>
+                    <!--<option>Month</option>-->
+                    <option value= "">Month</option>
                     <option value="01">Jan (01)</option>
                     <option value="02">Feb (02)</option>
                     <option value="03">Mar (03)</option>
@@ -146,8 +211,8 @@
                   </select>
                 </div>
                 <div class="col-xs-3">
-                  <select class="form-control" name="expiry-year">
-                    <option value="15">2015</option>
+                  <select class="form-control" name="expiry-year" required>
+                    <!--<option value="15">2015</option>-->
                     <option value="16">2016</option>
                     <option value="17">2017</option>
                     <option value="18">2018</option>
@@ -156,18 +221,19 @@
                     <option value="21">2021</option>
                     <option value="22">2022</option>
                     <option value="23">2023</option>
+                    <option value="23">2024</option>
                   </select>
                 </div>
               </div>
             </div>
             <!-- TODO: Make validation for Expiration Date according to these rules:
-                  * Fields must not be blank
-                  -->
+                  * Fields must not be blank-->
           </div>
+            
           <div class="form-group required">
             <label class="col-sm-3 control-label" for="cvv"><span class="glyphicon glyphicon-question-sign" title="Three-digit code from back of card."></span> Card CVV</label>
             <div class="col-sm-3">
-              <input type="text" class="form-control" name="cvv" id="cvv" placeholder="Security Code">
+              <input type="text" class="form-control" name="cvv" id="cvv" placeholder="Security Code" required>
             </div>
             <!-- TODO: Make validation for CVV according to these rules:
                   * Field must not be blank
@@ -176,6 +242,7 @@
                   -->
           </div>
         </fieldset>
+        
         <fieldset>
           <legend>Additional Information</legend>
           <div class="form-group required">
@@ -183,8 +250,8 @@
             <div class="col-sm-9">
               <div class="row">
                 <div class="col-xs-3">
-                  <select class="form-control col-sm-2" name="shipping-method" id="shipping-method">
-                    <option>Select One</option>
+                  <select class="form-control col-sm-2" name="shipping-method" id="shipping-method" required>
+                    <option value= "">Select One</option>
                     <option value="Ground">Ground</option>
                     <option value="Air">Air</option>
                     <option value="Sea">Sea</option>
@@ -194,10 +261,12 @@
                 </div>
               </div>
             </div>
+            
             <!-- TODO: Make validation for shipping method according to these rules:
                   * Field must not be blank
                   -->
           </div>
+          
           <div class="form-group">
             <label class="col-sm-3 control-label" for="comments">Special Instructions</label>
             <div class="col-sm-9">
@@ -209,26 +278,28 @@
                   * Field may contain any characters
                   -->
           </div>
+          
           <div class="form-group">
             <div class="col-sm-offset-3 col-sm-9">
               <button type="submit" class="btn btn-success"> <span class="glyphicon glyphicon-shopping-cart"></span> Check Out!</button>
             </div>
           </div>
+          
         </fieldset>
       </form>
-    </div>
+      </div>
+      
     <div class="container">
       <hr>
 
       <footer>
-        <p>&copy; Jane Student 2015</p>
+        <p>&copy; Mary Pringle 2016</p>
       </footer>
-    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-
-        <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/vendor/jquery.validate.min.js"></script>
-
-        <script src="js/main.js"></script>
+    </div> <!-- /container -->        
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="//js/vendor/jquery-1.11.2.min.js"><\/script>')</script> <!--this script contains errors!-->
+      <script src="js/vendor/bootstrap.min.js"></script>
+      <script src="js/vendor/jquery.validate.min.js"></script> <!--this script contains errors!-->
+      <script src="js/main.js"></script>
     </body>
 </html>

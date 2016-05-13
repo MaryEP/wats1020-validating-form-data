@@ -2,16 +2,39 @@
 
 /* ==========================================================================
    Author's custom styles
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }
+
+
    ========================================================================== */
 
+.a navbar-brand {
+  color: white;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
 
 
+.glyphicon {
+   padding: 10px;
+   border-radius: 5px;
+   color: blue;
+   font-size 14;
+  /* HOVER OFF */
+   -webkit-transition: padding 2s;
+}
 
-
-
-
-
-
+.glyphicon:hover {
+   padding: 20px;
+   border-radius: 7px;
+   color: blue;
+  font-size: 16px;
+  /* HOVER ON */
+   -webkit-transition: border-radius 2s;
+}
 
 
 
